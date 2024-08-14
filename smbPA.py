@@ -36,6 +36,7 @@ load_dotenv()  # take environment variables from .env.
 # Check if running in Streamlit Cloud with st.secrets available
 try:
     openai_api_key = st.secrets["openai_api_key"]
+    logger.info(openai_api_key)
 except:
     openai_api_key = os.getenv("OPENAI_API_KEY")
 
