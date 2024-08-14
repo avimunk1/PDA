@@ -142,6 +142,17 @@ if user_input and openai_api_key:  # handle the user input and responses
     msg_content = response.content
 
     # Check if the response starts with '@' and remove it
+    try:
+        if msg_content.startswith('@'):
+            logger.info("Response starts with '@', removing '@' characters")
+            msg_content = msg_content.lstrip('@')  # Remove leading '@' characters
+            # Send an email with the cleaned message
+            send_email(
+                subject="New Message from your PDA",
+                body=f"Here is the cleaned message that was sent to the user:\n\n{msg_content}")
+            msg_content = ""
+    except:
+        pass
     if msg_content.startswith('@'):
         logger.info("Response starts with '@', removing '@' characters")
         msg_content = msg_content.lstrip('@')  # Remove leading '@' characters
