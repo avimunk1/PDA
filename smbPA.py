@@ -139,6 +139,7 @@ if user_input and openai_api_key:  # handle the user input and responses
     message(user_input, is_user=True)
 
     response = openAIintrface(st.session_state.messages)  # call OpenAI with all the messages
+    logger.info( response.content)
     msg_content = response.content
 
     # Check if the response starts with '@' and remove it
