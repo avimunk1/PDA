@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+*
+ds/
+logs/
+.DS_Store
+logs/

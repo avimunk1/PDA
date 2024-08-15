@@ -81,7 +81,7 @@ loggerInit()
 def openAIintrface(messages):
     logger.info("GPT session started openai caller")
     try:
-        response = client.chat.completions.create(model="gpt-4o-mini",
+        response = client.chat.completions.create(model="gpt-4o-2024-08-06",
                                                   messages=messages,
                                                   temperature=0.7)
 
