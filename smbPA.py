@@ -46,11 +46,12 @@ client = OpenAI(api_key=openai_api_key)
 def send_email(subject, body, to="avimunk@gmail.com"):
     sender_email = "avimunk@gmail.com"
     sender_password = "jvna kqlc rrnu ruxv"
+    receiverEmail = "danielbunfad@gmail.com"
 
     # Create the email message
     msg = MIMEMultipart()
     msg['From'] = sender_email
-    msg['To'] = sender_email
+    msg['To'] = receiverEmail
     msg['Subject'] = subject
 
     msg.attach(MIMEText(body, 'plain'))
